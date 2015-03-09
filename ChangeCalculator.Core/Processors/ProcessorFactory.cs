@@ -11,7 +11,8 @@ namespace ChangeCalculator.Core.Processors {
             IEnumerable<AbstractProcessor> processorCollection = new List<AbstractProcessor>() {
             
                 new CoinProcessor(),
-                new BillProcessor()
+                new BillProcessor(), 
+                new GoldProcessor()
 
                 // TODO: Adicione novos processadores acima desta linha.
             };

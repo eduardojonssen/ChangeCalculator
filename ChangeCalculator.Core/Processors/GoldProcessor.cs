@@ -6,15 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ChangeCalculator.Core.Processors {
-
-    public class BillProcessor : AbstractProcessor {
-        
+    public class GoldProcessor : AbstractProcessor{
         public override IEnumerable<int> GetAvailableUnits() {
-            return new List<int>() {200, 500, 1000, 2000, 5000, 10000};
+            return new List<int>() {50000, 100000};
         }
 
         public override string GetName() {
-            return "Bill";
+            return "Gold";
         }
     }
 }

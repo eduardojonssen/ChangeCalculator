@@ -1,5 +1,6 @@
 ﻿using ChangeCalculator.Core;
 using ChangeCalculator.Core.DataContracts;
+using ChangeCalculator.Core.Events;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace ChangeCalculator {
         private void UxBtnCalculate_Click(object sender, EventArgs e) {
 
             ChangeCalculatorManager manager = new ChangeCalculatorManager();
+
+            manager.OnProcessorExecuted += manager_OnProcessorExecuted;
 
             string paidAmount = this.UxTxtPaidAmount.Text;
             string productAmount = this.UxTxtProductAmount.Text;
@@ -55,6 +58,14 @@ namespace ChangeCalculator {
 
                 this.UxTxtChange.Text = errors;
             }
+        }
+
+        void manager_OnProcessorExecuted(object sender, ProcessorResultEventArgs e) {
+            string changeLog = this.UxTxtChangeLog.Text;
+
+            changeLog += e.ProcessorName + " | " + e.Amount + Environment.NewLine;
+
+            this.UxTxtChangeLog.Text = changeLog;
         }
     }
 }

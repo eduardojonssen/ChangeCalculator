@@ -1,4 +1,5 @@
 ﻿using ChangeCalculator.Core.DataContracts;
+using ChangeCalculator.Core.Events;
 using ChangeCalculator.Core.Processors;
 using System;
 using System.Collections.Generic;
@@ -7,9 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ChangeCalculator.Core {
+
+    public delegate void ProcessorExecutedEventHandler(object sender, ProcessorResultEventArgs e);
+
     public class ChangeCalculatorManager {
 
         public ChangeCalculatorManager() { }
+
+        public event ProcessorExecutedEventHandler OnProcessorExecuted;
 
         public CalculateResponse Calculate(CalculateRequest calculateRequest) {
 
@@ -46,10 +52,22 @@ namespace ChangeCalculator.Core {
                 }
 
                 List<UnitData> newUnitDataCollection = processor.Calculate(remaningAmount);
+                long remaningAmountCount = 0;
 
                 foreach (UnitData unit in newUnitDataCollection) {
-                    remaningAmount -= (unit.Count * unit.ValueInCents);
+                    remaningAmountCount += (unit.Count * unit.ValueInCents);
                 }
+
+                // Caso exista alguém esperando a notificação, dispara o evento.
+                if (this.OnProcessorExecuted != null && remaningAmountCount > 0) {
+
+                    ProcessorResultEventArgs processorResultEventArgs =
+                        ProcessorResultEventArgs.Create(processor.GetName(), remaningAmountCount);
+
+                    this.OnProcessorExecuted(this, processorResultEventArgs); 
+                }
+
+                remaningAmount -= remaningAmountCount;
 
                 unitDataCollection.Add(processor.GetName(), newUnitDataCollection);
 

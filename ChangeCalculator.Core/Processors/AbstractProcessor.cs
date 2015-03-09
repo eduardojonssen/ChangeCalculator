@@ -13,6 +13,28 @@ namespace ChangeCalculator.Core.Processors {
 
         public abstract string GetName();
 
-        public abstract List<UnitData> Calculate(long changeAmount);
+        public virtual List<UnitData> Calculate(long changeAmount) {
+
+            List<UnitData> unitCollection = new List<UnitData>();
+
+            if (changeAmount <= 0) { return unitCollection; }
+
+            IEnumerable<int> orderedUnits = this.GetAvailableUnits().OrderByDescending(p => p);
+
+            foreach (int unit in orderedUnits) {
+
+                long unitCount = changeAmount / unit;
+                long remainingChangeAmount = changeAmount % unit;
+
+                if (unitCount != 0) { unitCollection.Add(new UnitData(unit, unitCount)); }
+
+                changeAmount = remainingChangeAmount;
+
+                if (remainingChangeAmount == 0) { break; }
+            }
+
+            return unitCollection;
+
+        }
     }
 }

@@ -30,6 +30,7 @@
             this.lbValorMontante = new System.Windows.Forms.Label();
             this.lbTroco = new System.Windows.Forms.Label();
             this.UxBtnCalculate = new System.Windows.Forms.Button();
+            this.UxTxtChangeLog = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbValorProduto
@@ -72,7 +73,7 @@
             this.UxTxtChange.Multiline = true;
             this.UxTxtChange.Name = "UxTxtChange";
             this.UxTxtChange.ReadOnly = true;
-            this.UxTxtChange.Size = new System.Drawing.Size(881, 166);
+            this.UxTxtChange.Size = new System.Drawing.Size(881, 170);
             this.UxTxtChange.TabIndex = 3;
             // 
             // lbValorMontante
@@ -100,7 +101,7 @@
             this.UxBtnCalculate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UxBtnCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UxBtnCalculate.Location = new System.Drawing.Point(167, 390);
+            this.UxBtnCalculate.Location = new System.Drawing.Point(167, 566);
             this.UxBtnCalculate.Name = "UxBtnCalculate";
             this.UxBtnCalculate.Size = new System.Drawing.Size(876, 50);
             this.UxBtnCalculate.TabIndex = 6;
@@ -108,12 +109,23 @@
             this.UxBtnCalculate.UseVisualStyleBackColor = true;
             this.UxBtnCalculate.Click += new System.EventHandler(this.UxBtnCalculate_Click);
             // 
+            // UxTxtChangeLog
+            // 
+            this.UxTxtChangeLog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UxTxtChangeLog.Location = new System.Drawing.Point(345, 377);
+            this.UxTxtChangeLog.Multiline = true;
+            this.UxTxtChangeLog.Name = "UxTxtChangeLog";
+            this.UxTxtChangeLog.Size = new System.Drawing.Size(881, 159);
+            this.UxTxtChangeLog.TabIndex = 7;
+            // 
             // FormChangeCalculator
             // 
             this.AcceptButton = this.UxBtnCalculate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1265, 480);
+            this.ClientSize = new System.Drawing.Size(1265, 656);
+            this.Controls.Add(this.UxTxtChangeLog);
             this.Controls.Add(this.UxBtnCalculate);
             this.Controls.Add(this.lbTroco);
             this.Controls.Add(this.lbValorMontante);
@@ -137,6 +149,7 @@
         private System.Windows.Forms.Label lbValorMontante;
         private System.Windows.Forms.Label lbTroco;
         private System.Windows.Forms.Button UxBtnCalculate;
+        private System.Windows.Forms.TextBox UxTxtChangeLog;
     }
 }
 

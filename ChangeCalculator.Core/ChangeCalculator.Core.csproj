@@ -46,10 +46,11 @@
     <Compile Include="DataContracts\Report.cs" />
     <Compile Include="DataContracts\ReportType.cs" />
     <Compile Include="DataContracts\UnitData.cs" />
-    <Compile Include="DataContracts\UnitType.cs" />
+    <Compile Include="Events\ProcessorResultEventArgs.cs" />
     <Compile Include="Processors\AbstractProcessor.cs" />
     <Compile Include="Processors\BillProcessor.cs" />
     <Compile Include="Processors\CoinProcessor.cs" />
+    <Compile Include="Processors\GoldProcessor.cs" />
     <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
