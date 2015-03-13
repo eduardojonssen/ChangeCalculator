@@ -15,7 +15,7 @@ namespace ChangeCalculator.Core.DataContracts {
         /// <summary>
         /// Lista que contém os erros de validação dos parâmetros recebidos.
         /// </summary>
-        public List<Report> ReportCollection {
+        internal List<Report> ReportCollection {
             get { return this.ActualReportCollection.ToList(); }
         }
 

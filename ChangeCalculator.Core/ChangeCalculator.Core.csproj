@@ -30,8 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dlp.Connectors">
+      <HintPath>..\packages\Dlp.Connectors.dll.0.4.8\lib\net45\Dlp.Connectors.dll</HintPath>
+    </Reference>
+    <Reference Include="Dlp.Framework">
+      <HintPath>..\packages\Dlp.Framework.dll.0.5.5\lib\net45\Dlp.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,14 +55,26 @@
     <Compile Include="DataContracts\ReportType.cs" />
     <Compile Include="DataContracts\UnitData.cs" />
     <Compile Include="Events\ProcessorResultEventArgs.cs" />
+    <Compile Include="Interceptors\LogIAttribute.cs" />
+    <Compile Include="Interceptors\LogInterceptor.cs" />
+    <Compile Include="Log\AbstractLog.cs" />
+    <Compile Include="Log\DataBaseLog.cs" />
+    <Compile Include="Log\EventViewerLog.cs" />
+    <Compile Include="Log\FileLog.cs" />
+    <Compile Include="Log\ILog.cs" />
+    <Compile Include="Log\LogType.cs" />
     <Compile Include="Processors\AbstractProcessor.cs" />
     <Compile Include="Processors\BillProcessor.cs" />
     <Compile Include="Processors\CoinProcessor.cs" />
     <Compile Include="Processors\GoldProcessor.cs" />
     <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\ConfigurationUtility.cs" />
+    <Compile Include="Utility\IConfigurationUtility.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

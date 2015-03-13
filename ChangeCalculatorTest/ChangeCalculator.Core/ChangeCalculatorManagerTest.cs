@@ -3,62 +3,39 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ChangeCalculator.Core;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using ChangeCalculator.Core.Log;
+using ChangeCalculator.Core.DataContracts;
+using ChangeCalculator.Core.Utility;
+using ChangeCalculatorTest.ChangeCalculator.Core.Mocks;
+using Dlp.Framework.Container;
 
 namespace ChangeCalculatorTest.ChangeCalculator.Core {
 
     [TestClass]
     [ExcludeFromCodeCoverage]
     public class ChangeCalculatorManagerTest {
-
+        
         [TestMethod]
-        public void CalculateCoins_ChangeFor210_Test() {
+        public void ChangeCalculatorManager_LogToFile_Test() {
+
+            ConfigurationUtilityMock utility = new ConfigurationUtilityMock();
+
+            utility.FileLogName = "LogTest.log";
+            utility.FileLogPath = @"C:\Logs\Test";
+
+            IocFactory.Register(
+                    Component.For<IConfigurationUtility>().Instance(utility),
+                    Component.For<ILog>().ImplementedBy<FileLog>()
+                );
 
             ChangeCalculatorManager manager = new ChangeCalculatorManager();
 
-            PrivateObject privateObject = new PrivateObject(manager);
+            CalculateRequest request = new CalculateRequest();
 
-            object objectResult = privateObject.Invoke("CalculateCoins", Convert.ToInt64(210));
+            request.PaidAmount = 350;
+            request.ProductAmount = 150;
 
-            Dictionary<int, long> result = (Dictionary<int, long>)objectResult;
-
-            Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count);
-
-            Assert.IsTrue(result.ContainsKey(100) == true);
-            Assert.IsTrue(result.ContainsKey(10) == true);
-
-            Assert.IsTrue(result[100] == 2);
-            Assert.IsTrue(result[10] == 1);
-        }
-
-        [TestMethod]
-        public void CalculateCoins_ChangeFor0_Test() {
-
-            ChangeCalculatorManager manager = new ChangeCalculatorManager();
-
-            PrivateObject privateObject = new PrivateObject(manager);
-
-            object objectResult = privateObject.Invoke("CalculateCoins", Convert.ToInt64(0));
-
-            Dictionary<int, long> result = (Dictionary<int, long>)objectResult;
-
-            Assert.IsNotNull(result);
-            Assert.AreEqual(0, result.Count);
-        }
-
-        [TestMethod]
-        public void CalculateCoins_ChangeForNegative1_Test() {
-
-            ChangeCalculatorManager manager = new ChangeCalculatorManager();
-
-            PrivateObject privateObject = new PrivateObject(manager);
-
-            object objectResult = privateObject.Invoke("CalculateCoins", Convert.ToInt64(-1));
-
-            Dictionary<int, long> result = (Dictionary<int, long>)objectResult;
-
-            Assert.IsNotNull(result);
-            Assert.AreEqual(0, result.Count);
+            manager.Calculate(request);
         }
     }
 }

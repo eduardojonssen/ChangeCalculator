@@ -1,6 +1,8 @@
 ﻿using ChangeCalculator.Core;
 using ChangeCalculator.Core.DataContracts;
 using ChangeCalculator.Core.Events;
+using ChangeCalculator.Core.Log;
+using ChangeCalculator.Core.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +21,7 @@ namespace ChangeCalculator {
 
         private void UxBtnCalculate_Click(object sender, EventArgs e) {
 
+            //AbstractLog log = new FileLog(new ConfigurationUtility());
             ChangeCalculatorManager manager = new ChangeCalculatorManager();
 
             manager.OnProcessorExecuted += manager_OnProcessorExecuted;

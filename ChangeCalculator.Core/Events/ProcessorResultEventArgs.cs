@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ChangeCalculator.Core.Events {
+
     public sealed class ProcessorResultEventArgs : EventArgs {
 
         private ProcessorResultEventArgs() { }
