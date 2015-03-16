@@ -62,6 +62,7 @@
     <Compile Include="Log\EventViewerLog.cs" />
     <Compile Include="Log\FileLog.cs" />
     <Compile Include="Log\ILog.cs" />
+    <Compile Include="Log\LogManager.cs" />
     <Compile Include="Log\LogType.cs" />
     <Compile Include="Processors\AbstractProcessor.cs" />
     <Compile Include="Processors\BillProcessor.cs" />

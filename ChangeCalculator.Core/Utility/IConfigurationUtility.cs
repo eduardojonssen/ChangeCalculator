@@ -7,6 +7,7 @@ namespace ChangeCalculator.Core.Utility {
         string FileLogName { get; }
         string FileLogPath { get; }
         string LogFullPath { get; }
-        string LogTo { get; }
+        string PrimaryLog { get; }
+        string SecondaryLog { get; }
     }
 }

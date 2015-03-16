@@ -12,7 +12,7 @@ namespace ChangeCalculator.Core.Log {
 
     public class FileLog : AbstractLog {
 
-        public FileLog(){
+        public FileLog() {
 
         }
 

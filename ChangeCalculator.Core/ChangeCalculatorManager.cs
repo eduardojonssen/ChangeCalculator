@@ -21,24 +21,20 @@ namespace ChangeCalculator.Core {
         public ChangeCalculatorManager() {
 
             IocFactory.Register(
-                Component.For<IConfigurationUtility>().ImplementedBy<ConfigurationUtility>().IsSingleton(),
-                Component.FromThisAssembly("ChangeCalculator.Core.Log").Interceptor<LogInterceptor>()
+                Component.For<IConfigurationUtility>().ImplementedBy<ConfigurationUtility>().IsSingleton()
                 );
-
-            this.Logger = IocFactory.ResolveByName<ILog>(IocFactory.Resolve<IConfigurationUtility>().LogTo);
         }
-
-        private ILog Logger { get; set; }
-
+        
         public event ProcessorExecutedEventHandler OnProcessorExecuted;
 
         public CalculateResponse Calculate(CalculateRequest calculateRequest) {
 
             CalculateResponse calculateResponse = new CalculateResponse();
+            LogManager log = new LogManager();
 
             try {
 
-                this.Logger.Write(LogType.Request, "Calculate", calculateRequest);
+                log.Write(LogType.Request, "Calculate", calculateRequest);
 
                 // Executa a validação dos dados recebidos.
                 if (calculateRequest.IsValid == false) {
@@ -97,7 +93,7 @@ namespace ChangeCalculator.Core {
             }
             catch (Exception ex) {
 
-                this.Logger.Write(LogType.Exception, "Calculate", ex.ToString());
+                log.Write(LogType.Exception, "Calculate", ex.ToString());
 
                 calculateResponse.ReportCollection.Add(
                     new Report() { 
@@ -106,7 +102,7 @@ namespace ChangeCalculator.Core {
             }
             finally
             {
-                this.Logger.Write(LogType.Response, "Calculate", calculateResponse);
+                log.Write(LogType.Response, "Calculate", calculateResponse);
             }
             
             return calculateResponse;       

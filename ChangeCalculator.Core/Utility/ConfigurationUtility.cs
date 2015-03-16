@@ -24,8 +24,12 @@ namespace ChangeCalculator.Core.Utility {
             get { return ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString; }
         }
 
-        public string LogTo {
-            get { return ConfigurationManager.AppSettings["LogTo"]; }
+        public string PrimaryLog {
+            get { return ConfigurationManager.AppSettings["PrimaryLog"]; }
+        }
+
+        public string SecondaryLog {
+            get { return ConfigurationManager.AppSettings["SecondaryLog"]; } 
         }
     }
 }
