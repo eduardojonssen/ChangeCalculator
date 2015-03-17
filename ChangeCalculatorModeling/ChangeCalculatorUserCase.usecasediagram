@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="48f01276-30eb-4fc7-9fb6-dc3c8c4657f0" name="ChangeCalculatorUserCase" linkedPackageId="ea0baf74-bea2-41f5-9bef-1879ce9fdb20" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="38e9f536-ccde-49f2-96e4-5705444b1f7b">
+      <profileInstance Id="f267b6be-98b5-4071-82b0-91d436e6066d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="cd7605f8-3869-41a1-a29e-adc719822190">
+      <profileInstance Id="4fd8291c-5a19-4ee2-9664-3b6593cd7b54" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="b63cf9ad-a6e7-4045-8b8a-a44844bae50b" name="Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b501530f-9f1e-40c6-952d-919cf7056f35" />
+        <targetEnds>
+          <association Id="5907407e-62d5-423d-a970-9092d953bb7f" isDerived="false" sourceEndRoleName="Usuário" targetEndRoleName="Informa os dados do produto e valor pago" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ea00b06e-f0e5-49b2-9764-71a32af4701b" LastKnownName="Informa os dados do produto e valor pago" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6bfc4899-30bf-42f7-814b-b156a29a606b" name="Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e21c99d8-e918-4dd3-b8d6-71a77748801c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d8c0eeb7-f963-4534-aadc-e8971219f135" name="Informa os dados do produto e valor pago" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1bbceadc-7ff6-4766-bc0e-fc2d38544adf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ecd4dd9c-d32d-4ca4-833c-d886f5dbf76b" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ea00b06e-f0e5-49b2-9764-71a32af4701b" name="Informa os dados do produto e valor pago" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="aefda89f-45d9-4599-af46-988571646884" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="67f0cf07-a46b-4bb6-9256-5fa4b12fbbc6" name="O troco é retornado" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3156e56d-d813-49fd-a827-c82f7e9d8b0e" />
+        <targetEnds>
+          <association Id="1d28e337-1259-46d2-8827-a5b29b9af2ee" isDerived="false" sourceEndRoleName="O troco é retornado" targetEndRoleName="Usuário" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="b63cf9ad-a6e7-4045-8b8a-a44844bae50b" LastKnownName="Usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="46571d64-ffca-484a-ba01-1a3850688d2f" name="O troco é retornado" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f0836117-637b-4862-8927-f9cbdb152647" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="abcd4793-5f31-4f7f-bc99-7fc9a689ec2c" name="Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fcdbab8f-e412-41cb-bdbe-71dcea0e7b9e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="38880871-d272-4e6b-8914-192e2a79c629" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="ea0baf74-bea2-41f5-9bef-1879ce9fdb20" name="ChangeCalculatorModeling">
+    <elementDefinition Id="8ff5df14-c686-4d93-9d0f-1e8d0c3b069c" />
+  </package>
+</useCaseModelRoot>

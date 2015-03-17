@@ -30,5 +30,14 @@ namespace ChangeCalculatorTest.ChangeCalculator.Core.Mocks {
 
         public string FileLogPath { get; set; }
 
+
+
+        public string PrimaryLog {
+            get { throw new NotImplementedException(); }
+        }
+
+        public string SecondaryLog {
+            get { throw new NotImplementedException(); }
+        }
     }
 }

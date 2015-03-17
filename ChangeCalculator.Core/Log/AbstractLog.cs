@@ -13,7 +13,7 @@ namespace ChangeCalculator.Core.Log {
         public IConfigurationUtility ConfigurationUtility { get; set; }
 
         public AbstractLog() {
-            this.ConfigurationUtility = IocFactory.Resolve<IConfigurationUtility>();
+            //this.ConfigurationUtility = IocFactory.Resolve<IConfigurationUtility>();
         }
 
         public abstract void Write(LogType logType, string methodName, object objectToSerialize);

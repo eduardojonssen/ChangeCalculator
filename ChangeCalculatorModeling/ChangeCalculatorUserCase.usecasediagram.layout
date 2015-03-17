@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ChangeCalculatorUserCase">
+  <useCaseModelRootMoniker Id="48f01276-30eb-4fc7-9fb6-dc3c8c4657f0" />
+  <nestedChildShapes>
+    <actorShape Id="1e6765c3-a082-47eb-a5cb-0ce73d856201" absoluteBounds="0.75, 2.875, 1.875, 1.25" isReference="false" imagePath="C:\Users\Eduardo\Desktop\original.jpg" heightOffset="0">
+      <actorMoniker Id="b63cf9ad-a6e7-4045-8b8a-a44844bae50b" LastKnownName="Usuário" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="1468611b-b5e1-4da3-9cbd-91674734bd8f" absoluteBounds="4.25, 2.375, 1, 0.875" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="ea00b06e-f0e5-49b2-9764-71a32af4701b" LastKnownName="Informa os dados do produto e valor pago" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(2.625 : 3.28954081632653); (4.26568549303471 : 2.92122366482894)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="5907407e-62d5-423d-a970-9092d953bb7f" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="1e6765c3-a082-47eb-a5cb-0ce73d856201" />
+        <useCaseShapeMoniker Id="1468611b-b5e1-4da3-9cbd-91674734bd8f" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="2e2e7618-fabc-44ec-ba93-c4038eaa036c" absoluteBounds="4.125, 4.25, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="67f0cf07-a46b-4bb6-9256-5fa4b12fbbc6" LastKnownName="O troco é retornado" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(4.21170037620539 : 4.35930225572949); (2.625 : 3.81914893617021)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="1d28e337-1259-46d2-8827-a5b29b9af2ee" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="2e2e7618-fabc-44ec-ba93-c4038eaa036c" />
+        <actorShapeMoniker Id="1e6765c3-a082-47eb-a5cb-0ce73d856201" />
+      </nodes>
+    </useCaseAssociationConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

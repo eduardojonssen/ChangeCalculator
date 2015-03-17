@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="9a46d674-c828-48c5-8653-d7332436067b" name="ChangeCalculatorActivity" linkedPackageId="e43ce2e3-96ee-429d-b9a8-79c9f3e66542" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="1c2b3b88-9f62-475b-b5e8-5a56df4cb57e">
+      <profileInstance Id="27104439-8632-459b-8d6c-54731301a960" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="9b476604-f213-4cf2-b39d-300d4db9d33b">
+      <profileInstance Id="c7f06c88-6976-4a74-8678-f35f39a86b9e" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="e9f82028-68bc-46fe-9082-e83e6947d3d1" name="ChangeCalculatorActivity" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="3aee0108-f021-41e1-b27d-3e0b34faf9b8" />
+        <nodes>
+          <initialNode Id="59e960d4-8dd5-4973-9d87-6bd02fe17268" name="Initial1" isLeaf="false">
+            <elementDefinition Id="d16d92b7-ed9d-4741-baef-36db17f22486" />
+            <flowNodeTargets>
+              <controlFlow Id="3489ac6b-a25c-43b3-8ac5-24f10af75a33" isLeaf="false">
+                <opaqueActionMoniker Id="9981e0f1-886e-4ff0-a809-5cc8976e439f" LastKnownName="Receber valor pago e valor do produto" />
+                <elementDefinition Id="1c62378a-1554-4cef-be04-fa9c05a0c1f6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="9981e0f1-886e-4ff0-a809-5cc8976e439f" name="Receber valor pago e valor do produto" isLeaf="false">
+            <elementDefinition Id="b85e570e-3de9-447d-b6ff-a88a0068dbdc" />
+            <flowNodeTargets>
+              <controlFlow Id="e7c2e215-6f08-41c5-83d6-cfb764a20c94" isLeaf="false">
+                <opaqueActionMoniker Id="921507b0-d265-4ef2-b9bc-8a71139adec3" LastKnownName="Calcular valor total do troco" />
+                <elementDefinition Id="a581301c-1fdc-4600-bad3-2660c21d4ff8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="921507b0-d265-4ef2-b9bc-8a71139adec3" name="Calcular valor total do troco" isLeaf="false">
+            <elementDefinition Id="f7e2c0aa-661e-4ecc-81d4-c51d692f0a7d" />
+            <flowNodeTargets>
+              <controlFlow Id="9ba20f58-e6a1-4d29-8a47-f14874680780" isLeaf="false">
+                <decisionNodeMoniker Id="3ebf0b5a-8738-46f3-b9e0-e2e735719c57" LastKnownName="Decision1" />
+                <elementDefinition Id="ccc15b91-eb54-4e74-bf4e-60be2b8dff26" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6139e0f4-50f3-4333-b35b-0c2700b68c54" name="Decompor troco com menor quantidade possível de moedas" isLeaf="false">
+            <elementDefinition Id="5a60d446-6d32-443f-ab3b-f6f435fdb69d" />
+            <flowNodeTargets>
+              <controlFlow Id="a5ea2f61-8769-47ad-97b3-46171154a5e0" isLeaf="false">
+                <opaqueActionMoniker Id="f5a9cd7f-a5b3-45b2-b379-cde36746ba7f" LastKnownName="Retornar a lista de moedas com a quantidade unitária de cada moeda" />
+                <elementDefinition Id="1d9d806e-793a-44d1-975f-3ca3c1d12327" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f5a9cd7f-a5b3-45b2-b379-cde36746ba7f" name="Retornar a lista de moedas com a quantidade unitária de cada moeda" isLeaf="false">
+            <elementDefinition Id="91828584-cd70-4378-aadb-c06f3d86360e" />
+            <flowNodeTargets>
+              <controlFlow Id="72cc253c-d90c-43d0-9788-2de7ccdbbe97" isLeaf="false">
+                <mergeNodeMoniker Id="be8ad71c-9d1d-40fa-b898-51e4ff48ddc3" LastKnownName="Merge1" />
+                <elementDefinition Id="6226e4a2-d2bf-44c4-834c-824e217e3582" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="ed8095c8-75c9-44ca-88b4-01844e2af36b" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="39a3d713-5390-445f-b188-9c2b31a06413" />
+          </activityFinalNode>
+          <decisionNode Id="3ebf0b5a-8738-46f3-b9e0-e2e735719c57" name="Decision1" isLeaf="false">
+            <elementDefinition Id="93a0d2ae-e763-4d24-bff0-065b9ba13ab9" />
+            <flowNodeTargets>
+              <controlFlow Id="8f2c4eec-1cf0-4485-9cc1-4ba141b35293" guard="Se há troco" isLeaf="false">
+                <opaqueActionMoniker Id="6139e0f4-50f3-4333-b35b-0c2700b68c54" LastKnownName="Decompor troco com menor quantidade possível de moedas" />
+                <elementDefinition Id="bad7aeb9-142e-46c4-a7f5-bb0f3d3c0ed9" />
+              </controlFlow>
+              <controlFlow Id="1ba8a9c2-fc15-4469-a766-02346b69ba6c" guard="Se não há troco" isLeaf="false">
+                <opaqueActionMoniker Id="3007d779-b06b-4fe3-b591-99597721d610" LastKnownName="Retornar que não há troco" />
+                <elementDefinition Id="5f9e3766-4036-4fa0-8813-78542669834b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="3007d779-b06b-4fe3-b591-99597721d610" name="Retornar que não há troco" isLeaf="false">
+            <elementDefinition Id="b6e03551-f10c-4622-9605-b9d082c548cf" />
+            <flowNodeTargets>
+              <controlFlow Id="58b78c12-8992-45d4-8cb7-8e8fcb8c6b60" isLeaf="false">
+                <mergeNodeMoniker Id="be8ad71c-9d1d-40fa-b898-51e4ff48ddc3" LastKnownName="Merge1" />
+                <elementDefinition Id="722c36e6-660e-4029-901b-0119ee8e8f79" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="be8ad71c-9d1d-40fa-b898-51e4ff48ddc3" name="Merge1" isLeaf="false">
+            <elementDefinition Id="56bcba07-6ffb-47dc-931e-0b2dc390fdb6" />
+            <flowNodeTargets>
+              <controlFlow Id="40d203f8-21a4-408c-ac34-602d2626503f" isLeaf="false">
+                <activityFinalNodeMoniker Id="ed8095c8-75c9-44ca-88b4-01844e2af36b" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="1d9d582b-abe6-470e-9c66-1eb2343b87de" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="e43ce2e3-96ee-429d-b9a8-79c9f3e66542" name="ChangeCalculatorModeling">
+    <elementDefinition Id="8ff5df14-c686-4d93-9d0f-1e8d0c3b069c" />
+  </package>
+</activityRootModel>
