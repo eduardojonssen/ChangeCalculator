@@ -1,4 +1,6 @@
-﻿using ChangeCalculator.Core.Utility;
+﻿using ChangeCalculator.Core.Repository;
+using ChangeCalculator.Core.Repository.Entities;
+using ChangeCalculator.Core.Utility;
 using Dlp.Connectors;
 using Dlp.Framework;
 using System;
@@ -25,14 +27,15 @@ namespace ChangeCalculator.Core.Log {
             string logData = string.Format("[{0}]: {1} | {2} | {3}{4}",
                 DateTime.UtcNow, logType, methodName, serializedRequest, Environment.NewLine);
 
-            string query = @"INSERT INTO ServiceLog (MethodName, LogData, LogCategoryTypeId)
-                             VALUES (@MethodName, @LogData, @LogCategoryTypeId)";
+            ServiceLogRepository repository = new ServiceLogRepository();
 
-            using (DatabaseConnector databaseConnector = new DatabaseConnector(this.ConfigurationUtility.DatabaseConnection)) {
+            ServiceLogEntity entity = new ServiceLogEntity();
 
-                databaseConnector.ExecuteNonQuery(query,
-                    new { MethodName = methodName, LogData = logData, LogCategoryTypeId = (short)logType });
-            }
+            entity.LogCategoryTypeId = (short)logType;
+            entity.LogData = logData;
+            entity.MethodName = methodName;
+
+            repository.Save(entity);
         }
     }
 }

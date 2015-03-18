@@ -2,6 +2,7 @@
 using ChangeCalculator.Core.DataContracts;
 using ChangeCalculator.Core.Events;
 using ChangeCalculator.Core.Log;
+using ChangeCalculator.Core.Repository.Entities;
 using ChangeCalculator.Core.Utility;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,8 @@ namespace ChangeCalculator {
 
             string paidAmount = this.UxTxtPaidAmount.Text;
             string productAmount = this.UxTxtProductAmount.Text;
+
+            ServiceLogEntity entity = new ServiceLogEntity();
 
             CalculateRequest calculateRequest = new CalculateRequest();
 

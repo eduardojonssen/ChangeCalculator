@@ -71,6 +71,8 @@
     <Compile Include="Processors\GoldProcessor.cs" />
     <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Entities\ServiceLogEntity.cs" />
+    <Compile Include="Repository\ServiceLogRepository.cs" />
     <Compile Include="Utility\ConfigurationUtility.cs" />
     <Compile Include="Utility\IConfigurationUtility.cs" />
   </ItemGroup>

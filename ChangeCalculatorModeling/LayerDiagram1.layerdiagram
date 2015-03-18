@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="4868c211-6a6a-4a1a-9e1a-cfbef0e93837" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="12bb65f7-cc39-4fd5-9129-4eb60bef13bf" name="UserInterface">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d3f8f24d-4787-44cd-9fe6-e78b85f0c463" direction="Forward">
+          <layerMoniker Id="b959d19f-314e-4f47-aba9-bc8f3b6465b7" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="b1edf70f-4be3-441f-9145-e2f7ecb3efc6" name="ChangeCalculator">
+          <ArtifactNode Label="ChangeCalculator" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/ChangeCalculator/ChangeCalculator/ChangeCalculator.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=ChangeCalculator)" Label="ChangeCalculator.exe" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.exe" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="b959d19f-314e-4f47-aba9-bc8f3b6465b7" name="ChangeCalculator">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3caa235c-4373-4734-8f05-70ca834c412a" direction="Forward">
+          <layerMoniker Id="be5b9b48-994d-4b85-b509-cbedfcfad9f4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="077a0855-19ff-4859-897b-19dfaf0d2057" name="Utility">
+          <references>
+            <reference Id="3ed2fa23-2697-4009-be95-2cc9b793f538" name="Utility">
+              <ArtifactNode Label="Utility" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/ChangeCalculator/ChangeCalculator.Core/ChangeCalculator.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/ChangeCalculator/ChangeCalculator.Core/Utility/&quot;)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Utility Type=ConfigurationUtility)" Label="ConfigurationUtility" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Utility Type=IConfigurationUtility)" Label="IConfigurationUtility" Category="CodeSchema_Interface">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="dcd2d608-493a-4aa8-8881-f91c9a801b3f" name="Processors">
+          <references>
+            <reference Id="7435d74e-3680-4d7a-9bd3-09cde6f83679" name="Processors">
+              <ArtifactNode Label="Processors" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/ChangeCalculator/ChangeCalculator.Core/ChangeCalculator.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/ChangeCalculator/ChangeCalculator.Core/Processors/&quot;)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Processors Type=AbstractProcessor)" Label="AbstractProcessor" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Processors Type=BillProcessor)" Label="BillProcessor" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Processors Type=CoinProcessor)" Label="CoinProcessor" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Processors Type=GoldProcessor)" Label="GoldProcessor" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Processors Type=ProcessorFactory)" Label="ProcessorFactory" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="12eea85d-06d1-434c-9e26-01691dbdeb5c" name="Repository">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="cd1f4674-65c4-42a4-bcaf-6296710cc6e5" direction="Forward">
+              <layerMoniker Id="077a0855-19ff-4859-897b-19dfaf0d2057" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="8e65ab39-cf5c-42a7-a04c-1aaee121c048" name="Repository">
+              <ArtifactNode Label="Repository" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/ChangeCalculator/ChangeCalculator.Core/ChangeCalculator.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/ChangeCalculator/ChangeCalculator.Core/Repository/&quot;)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Repository.Entities Type=ServiceLogEntity)" Label="ServiceLogEntity" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Repository Type=ServiceLogRepository)" Label="ServiceLogRepository" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="fbffc7a7-44ca-480d-8f18-714ceedbdc87" name="ChangeCalculator.Core">
+          <ArtifactNode Label="ChangeCalculator.Core" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/ChangeCalculator/ChangeCalculator.Core/ChangeCalculator.Core.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=ChangeCalculator.Core)" Label="ChangeCalculator.Core.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="be5b9b48-994d-4b85-b509-cbedfcfad9f4" name="Log">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4064e6fb-6799-4943-9376-33028dd4f135" direction="Forward">
+          <layerMoniker Id="12eea85d-06d1-434c-9e26-01691dbdeb5c" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="8f90d640-11a9-4644-9508-d10e58edc1c9" direction="Forward">
+          <layerMoniker Id="077a0855-19ff-4859-897b-19dfaf0d2057" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="fd132a0b-fdd3-4354-8190-163d006567e9" name="Log">
+          <ArtifactNode Label="Log" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/ChangeCalculator/ChangeCalculator.Core/ChangeCalculator.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/ChangeCalculator/ChangeCalculator.Core/Log/&quot;)">
+            <Category Ref="ProjectFolder" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Log Type=AbstractLog)" Label="AbstractLog" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Log Type=DataBaseLog)" Label="DataBaseLog" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Log Type=EventViewerLog)" Label="EventViewerLog" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Log Type=FileLog)" Label="FileLog" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Log Type=ILog)" Label="ILog" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Log Type=LogManager)" Label="LogManager" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ChangeCalculator.Core Namespace=ChangeCalculator.Core.Log Type=LogType)" Label="LogType" Category="CodeSchema_Enum">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>
